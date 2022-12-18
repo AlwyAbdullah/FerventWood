@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Fervent Wood</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="robots" content="index, follow" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+            integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="assets/packed.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/modal.min.css"
+            integrity="sha512-CPLGe+O/BzgzHJKpdBXUuewmlxhlEfQ00zuYg1vcGCjOo88mqMeO1qa8q397ifxm18D12Go8OF7A42CjOKEl/g=="
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css"
+            integrity="sha512-uCQmAoax6aJTxC03VlH0uCEtE0iLi83TW1Qh6VezEZ5Y17rTrIE+8irz4H4ehM7Fbfbm8rb30OkxVkuwhXxrRg=="
+            crossorigin="anonymous"
+        />
+        <link rel="icon" href="ico.png" type="image/png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico.png" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            crossorigin="anonymous"
+        />        
+        <meta name="description" content="" />
+        <style>
+            html {
+                scroll-behavior: smooth;
+                overflow-y: hidden !important;
+            }
+
+            .float {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                bottom: 40px;
+                right: 40px;
+                background-color: #25d366;
+                color: #fff;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: 2px 2px 3px #999;
+                z-index: 100;
+            }
+
+            .my-float {
+                margin-top: 16px;
+            }
+
+            .ui.sidebar {
+                overflow: visible !important;
+            }
+
+            .__fr.__ed.fr_header {
+                background-image: url("wp.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+            }
+
+            .sub.header {
+                color: #ffffff !important;
+            }
+
+            .iconn {
+                width: 50px;
+                height: 50px;
+                margin-left: 15px;
+                margin-bottom: 15px;
+                cursor: pointer;
+            }
+            .swiper-container{
+                margin: 0 auto;
+            }
+            .swiper-wrapper {
+                position: relative;
+            }
+            .ui[class*="top banner"].ad{
+             width: 100%;
+             position: absolute;
+         }         
+         .text_container.ui.header{
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             margin: 0;
+             z-index: 199;
+         }
+         .ui.grid{
+             margin: -2rem;
+         }
+         .item{
+            color: black !important;
+         }
+        </style>
+    </head>
+
+    <body>
+        <a href="https://api.whatsapp.com/send?phone=+6287760670002&text=Halo%2c%20Saya%20ingin%20bertanya" class="float" target="_blank">
+            <i class="fab fa-whatsapp my-float"></i>
+        </a>
+        <div class="body-content">
+            <div class="ui grid" style="background: #e6e6e6">
+                <div class="computer only row">
+                   <div class="column">
+                    <div class="swiper-container" id="xx">
+                        <span class="swiper-wrapper">
+                        <img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Arise_ed.jpg" width="1280" height="400"
+                           class="swiper-slide img_banner">
+                        <img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Brawni3.jpg?cy=100&ch=400" width="1280" height="400"
+                           class="swiper-slide img_banner">
+                        </span>
+                     </div>
+                     
+                     <div style="width: 100%;color: white;" class="text_container ui header centered">
+                         <h1 style="font-size: xx-large">Ferventwood</h1>
+                         <br>
+                         <div style="font-size: x-large;">CV Karya Bintang Utama</div>
+                     </div>
+                   </div>
+                </div>
+                <div class="tablet mobile only row">
+                   <div class="column">
+                    <div class="swiper-container" id="xx_m">
+                        <span class="swiper-wrapper">
+                        <img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Brawni3.jpg?cy=100&ch=720" width="1280" height="720"
+                           class="swiper-slide img_banner">
+                        <img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Arise_720.jpg" width="1280" height="720"
+                           class="swiper-slide img_banner">
+                        </span>
+                     </div>
+                     <div style="width: 100%;color: white;" class="text_container ui header centered">
+                        <h1 style="font-size: xx-large">Ferventwood</h1>
+                        <br>
+                        <div style="font-size: large;">CV Karya Bintang Utama</div>
+                    </div>
+                   </div>
+                </div>
+             </div>
+
+             <div class="ui grid" style="background: #e6e6e6">
+                <div class="computer only row">
+                   <div class="column">
+                      <div class="ui borderless menu">
+                         <a class="item">
+                         <img src="https://nteryoff.sirv.com/Images/5resize.png" style="width: 90px !important;">
+                         </a>
+                         <div class="right menu">
+                            <a class="item" id="copro" href="index.html#copro">Profil</a>
+                            <a class="item" id="catalog" href="index.html#catalog">Tampilan Produk</a>
+                            <a class="item" id="catalog" href="index.html#catalog">Tipe Produk</a>
+                            <!-- <div class="ui pointing dropdown link item">
+                               <span class="item">Tipe Produk</span>
+                               <i class="dropdown icon"></i>
+                               <div class="menu">
+                                  <div class="item" id="ichi" href="index.html#catalog">Brawny</div>
+                                  <div class="item" id="nii" href="index.html#catalog">Unenven</div>
+                                  <div class="item" id="san" href="index.htm#catalog">Arise</div>
+                                  <div class="item" id="shi" href="index.htm#catalog">Aqual</div>
+                               </div>
+                            </div> -->
+                            <a class="item" href="gallery.html" id="buk">Galeri</a>
+                            <a class="item" id="contact" href="index.html#contact">Kontak</a>
+                         </div>
+                         <div class="right menu">
+                            <a class="item right">
+                               <img src="https://nteryoff.sirv.com/Images/5resize.png" style="width: 90px !important;">
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="tablet mobile only row">
+                   <div class="column">
+                      <div class="ui borderless menu">
+                         <a style="margin-left: 10px;" id="mobile_item" class="item">
+                         <i class="bars icon"></i>
+                         </a>
+                         <div class="right menu">
+                            <div class="item">
+                               <a href="index.html" id="mobile_item" class="item">
+                                  <img src="https://nteryoff.sirv.com/Images/5resize.png" style="width: 90px !important;">
+                               </a>
+                            </div>
+                         </div>
+                         <div class="right menu">
+                            <div class="item"></div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+
+            <div class="ui pushable" style="margin-top: 1rem;">
+                <div class="ui sidebar attached vertical menu">
+                    <a class="item" href="index.html#copro" id="copro">Profil</a>
+                    <a class="item" href="index.html#catalog" id="catalog">Tampilan Produk</a>
+                    <a class="item" href="index.html#catalog" id="catalog">Tipe Produk</a>
+                    <!-- <div class="ui accordion">
+                        <a class="title item" style="color: #999 !important; padding: 1.25rem !important;">
+                            Tipe Produk
+                            <i class="dropdown icon"></i>
+                        </a>
+                        <div class="content">
+                            <div class="item" id="ichi" href="index.html#display">Brawny</div>
+                            <div class="item" id="nii" href="index.html#display">Unenven</div>
+                            <div class="item" id="san" href="index.htm#display">Arise</div>
+                        </div>
+                    </div> -->
+                    <a class="item" href="gallery.html" id="buk">Galeri</a>
+                    <a class="item" id="contact" href="index.html#contact">Kontak</a>
+                </div>
+
+                <div class="pusher">
+                    <!-- #e6e6e6 -->
+                    <div class="ui horizontal">
+                        <section id="photos" class="ui basic segment show">
+                            <section class="ui three stackable cards">
+                                <article class="PhotoCard ui card">
+                                    <img
+                                        src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/Wa-1.jpeg?thumbnail=300"                                        
+                                        alt=""
+                                        class="ui fluid image"
+                                        id="sl"
+                                    />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img
+                                        src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/Wa-2.jpeg?thumbnail=300"
+                                        alt=""
+                                        class="ui fluid image"
+                                    />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img
+                                        src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/Wa-3.jpg?thumbnail=300"
+                                        alt=""
+                                        class="ui fluid image"
+                                    />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img
+                                        src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/pemesangan%20wall%20panel%20-Recovered-.jpg?thumbnail=300"                                    
+                                        alt=""
+                                        class="ui fluid image"
+                                    />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/1.jpeg?thumbnail=300" class="ui fluid image" />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/2.jpeg?thumbnail=300" class="ui fluid image" />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/3.jpeg?thumbnail=300" class="ui fluid image" />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/4.jpg?thumbnail=300" class="ui fluid image" />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/5.jpeg?thumbnail=300" class="ui fluid image" />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/6.jpeg?thumbnail=300" class="ui fluid image" />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/7.jpeg?thumbnail=300" class="ui fluid image" />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/8.jpeg?thumbnail=300" class="ui fluid image" />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/9.jpeg?thumbnail=300" class="ui fluid image" />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/10.jpeg?thumbnail=300" class="ui fluid image" />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/11.jpeg?thumbnail=300" class="ui fluid image" />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/12.jpeg?thumbnail=300" class="ui fluid image" />
+                                </article>
+                                <article class="PhotoCard ui card">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/13.jpg?thumbnail=300" class="ui fluid image" />
+                                </article>
+                            </section>
+                        </section>
+                    </div>
+                    <div id="map" style="width: 100%; height: 300px;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.4616061637544!2d112.8876187142193!3d-7.633404177608429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7c7af6450421d%3A0x8f2ca70b49566401!2sFervent%20Wood!5e0!3m2!1sen!2sid!4v1579015380344!5m2!1sen!2sid"
+                            width="100%"
+                            height="100%"
+                            frameborder="0"
+                            style="border: 0;"
+                            allowfullscreen=""
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui basic modal">
+            <div class="actions">
+                <div class="ui red basic cancel inverted button"><i class="remove icon"></i>Close</div>
+            </div>
+            <div class="content">
+                <div class="swiper-container" id="slide">
+                    <div class="swiper-wrapper">                        
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/Wa-1.jpeg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/Wa-2.jpeg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/Wa-3.jpg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/pemesangan%20wall%20panel%20-Recovered-.jpg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/1.jpeg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/2.jpeg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/3.jpeg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/4.jpg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/5.jpeg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/6.jpeg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/7.jpeg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/8.jpeg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/9.jpeg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/10.jpeg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/11.jpeg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/12.jpeg" alt="" />
+                        <img class="swiper-slide" width="100%" height="100%" src="https://nteryoff.sirv.com/Images/Ferventwood/Portofolio/13.jpg" alt="" />
+                    </div>
+                    <!-- Add Arrows
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div> -->
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/modal.min.js"
+            integrity="sha512-aAW/TaSuYfyjTcMsaYP67Dwe0vI5d7ej9X7NJBPkhafB+D5kx57flRNo8+tOXWA0Gcq0MBmhPatrvn1YwvH9gQ=="
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js" integrity="sha512-VHsNaV1C4XbgKSc2O0rZDmkUOhMKPg/rIi8abX9qTaVDzVJnrDGHFnLnCnuPmZ3cNi1nQJm+fzJtBbZU9yRCww==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" integrity="sha512-F5QTlBqZlvuBEs9LQPqc1iZv2UMxcVXezbHzomzS6Df4MZMClge/8+gXrKw2fl5ysdk4rWjR0vKS7NNkfymaBQ==" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function () {
+                $('.ui.sidebar').sidebar({
+                    context: $('.ui.pushable'),
+                    transition: 'overlay',
+                }).sidebar('attach events', '#mobile_item');
+                if ($(window).width() < 1024) {
+                    $('.ui.dropdown').dropdown();
+                    $('.ui.sidebar').sidebar({
+                        context: $('.ui.pushable'),
+                        transition: 'overlay',
+                    }).sidebar('attach events', '#mobile_item');
+                };
+                var mySwiper = new Swiper('#slide', {
+                    // Optional parameters                                        
+                    grabCursor: true,
+                    direction: 'horizontal',
+                    loop: true,
+                    spaceBetween: 30,
+                    centeredSlides: true,                    
+                    autoplay: {
+                        delay: 2000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                        clickable: true,
+                    },
+                    observer: true,
+                    observeParents: true
+                });
+                var mySwiper = new Swiper('#xx', {
+                    // Optional parameters                                        
+                    grabCursor: true,
+                    direction: 'horizontal',
+                    loop: true,
+                    spaceBetween: 30,
+                    centeredSlides: true,                    
+                    autoplay: {
+                        delay: 2000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                        clickable: true,
+                    },
+                    observer: true,
+                    observeParents: true
+                });
+                $(".PhotoCard").hover(function(){
+                    $(this).transition('pulse');
+                }, function(){});                
+                $(".PhotoCard").click(function () {                    
+                    mySwiper.slideTo($(this).index()+1);                    
+                    $(".ui.basic.modal").modal("show");
+                });
+            });                    
+        </script>
+    </body>
+</html>

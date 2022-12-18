@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Fervent Wood</title>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <meta name="theme-color" content="#ffffff">
+      <meta name="robots" content="index, follow">
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+         integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+         crossorigin="anonymous"
+         />
+      <link rel="stylesheet" href="assets/packed.css" />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/modal.min.css"
+         integrity="sha512-CPLGe+O/BzgzHJKpdBXUuewmlxhlEfQ00zuYg1vcGCjOo88mqMeO1qa8q397ifxm18D12Go8OF7A42CjOKEl/g=="
+         crossorigin="anonymous"
+         />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css"
+         integrity="sha512-uCQmAoax6aJTxC03VlH0uCEtE0iLi83TW1Qh6VezEZ5Y17rTrIE+8irz4H4ehM7Fbfbm8rb30OkxVkuwhXxrRg=="
+         crossorigin="anonymous"
+         />
+      <link rel="icon" href="ico.png" type="image/png" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico.png" />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+         crossorigin="anonymous"
+         />
+      <meta name="description" content="">
+      <style>
+         html {
+         scroll-behavior: smooth;
+         overflow-y: hidden !important;  
+         }
+         .float {
+         position: fixed;
+         width: 60px;
+         height: 60px;
+         bottom: 40px;
+         right: 40px;
+         background-color: #25d366;
+         color: #FFF;
+         border-radius: 50px;
+         text-align: center;
+         font-size: 30px;
+         box-shadow: 2px 2px 3px #999;
+         z-index: 100;
+         }
+         .my-float {
+         margin-top: 16px;
+         }
+         .ui.sidebar {
+         overflow: visible !important;
+         }
+         .__fr.__ed.fr_header {
+         background-image: url("https://nteryoff.sirv.com/Images/Ferventwood/Panel/Brawni3.jpg");
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-attachment: fixed;
+         background-position: center;
+         }
+         .prof {
+         background: white;
+         color: black !important;
+         }
+         .headd {
+         text-align: left;
+         padding: 1.5em !important;
+         }
+         .sub.header {
+         color: #ffffff !important;
+         }
+         .cont {
+         margin-top: 4em !important;
+         }
+         .dimmed.dimmable>.ui.animating.dimmer,
+         .dimmed.dimmable>.ui.visible.dimmer,
+         .ui.active.dimmer {
+         display: flex !important;
+         align-items: center !important;
+         justify-content: center !important;
+         }
+         .ui.modal,
+         .ui.active.modal {
+         margin: 0 auto !important;
+         top: auto !important;
+         left: auto !important;
+         transform-origin: center !important;
+         transition: all ease .5s;
+         }
+         .product-item {
+         width: 100%;
+         height: 100%;
+         }
+         .swipper-container {
+         width: 100%;
+         height: 100%;
+         }
+         .swipper-wrapper {
+         width: 100%;
+         height: 100%;
+         }
+         /*MODAL FIXES*/
+         @media (max-width: 480px) {
+         .modal {
+         height: 500px;
+         /* Set a default max height of the modal (adjusted later)*/
+         position: fixed;
+         /* Display modal in the centre of your screen */
+         overflow-y: scroll;
+         /*  Ensure that the modal is scroll-able */
+         -webkit-overflow-scrolling: touch;
+         /* Avoid having to use 2 finger scroll on iOS  */
+         }
+         .modal.fade.in {
+         top: 5px;
+         }
+         .modal-body {
+         max-height: 2400px;
+         }
+         .modal h3 {
+         font-size: 15px
+         }
+         }
+         @media (max-width: 480px) and (max-height: 500px) {
+         .modal {
+         height: 450px
+         }
+         }
+         @media (max-width: 480px) and (max-height: 450px) {
+         .modal {
+         height: 400px
+         }
+         }
+         @media (max-width: 480px) and (max-height: 400px) {
+         .modal {
+         height: 350px
+         }
+         }
+         @media (max-width: 480px) and (max-height: 350px) {
+         .modal {
+         height: 300px
+         }
+         }
+         @media (max-width: 480px) and (max-height: 300px) {
+         .modal {
+         height: 250px
+         }
+         }
+         @media (max-width: 480px) and (max-height: 250px) {
+         .modal {
+         height: 200px
+         }
+         }
+         @media (max-width: 480px) and (max-height: 200px) {
+         .modal {
+         height: 150px
+         }
+         }
+         .ui.card .content {            
+         /* padding: 0 0 1rem 0; */
+         }
+         .ui.card>.image, .ui.cards>.card>.image{
+         background: white;            
+         }
+         .ui.card>.content, .ui.cards>.card>.content{
+         border: none;
+         margin: 1rem 0 0 0;
+         }
+         .iconn {
+         width: 50px;
+         height: 50px;
+         margin-left: 15px;
+         margin-bottom: 15px;
+         cursor: pointer;
+         } 
+         .icon {
+         background: white;
+         }
+         @media(max-width: 1024px) {
+         #banner {
+         height: 300px !important;
+         }
+         #toko {
+         margin: 80px auto;
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <a href="https://api.whatsapp.com/send?phone=+6287760670002&text=Halo%2c%20Saya%20ingin%20bertanya"
+         class="float" target="_blank">
+      <i class="fab fa-whatsapp my-float"></i>
+      </a>
+      <div class="body-content">
+         <div class="store-header __fr __ed fr_header fr_main_header overlay  visible" id="banner">
+            <div id="header" class="centered description">
+               <h1 class="ui header" id="toko" style="background: rgba(255, 255, 0, 0.5) !important; color: black;">
+                  <span class="fr-text __fr __ed fr_text_bright_center">
+                     FERVENT WOOD
+                     <br>
+                     <div style="font-size: x-large;">CV Karya Bintang Utama</div>
+                  </span>
+               </h1>
+               <p class="subheader" id="subheadline">
+                  <span class="fr-text __fr __ed fr_text_bright_center"></span>
+               </p>
+            </div>
+            <div class="fr_overlay __fr __ed"></div>
+         </div>
+         <div class="ui grid" style="background: #e6e6e6">
+            <div class="computer only row">
+               <div class="column">
+                  <div class="ui borderless menu">
+                     <a class="item">
+                     <img src="https://nteryoff.sirv.com/Images/ico.png" />
+                     </a>
+                     <div class="right menu">
+                        <a class="item" id="copro" href="index.html#copro">Profil</a>
+                        <a class="item" id="catalog" href="index.html#catalog">Tampilan Produk</a>
+                        <div class="ui pointing dropdown link item">
+                           <span class="item">Tipe Produk</span>
+                           <i class="dropdown icon"></i>
+                           <div class="menu">
+                              <div class="item" id="ichi" href="index.html#catalog">Brawny</div>
+                              <div class="item" id="nii" href="index.html#catalog">Unenven</div>
+                              <div class="item" id="san" href="index.htm#catalog">Arise</div>
+                           </div>
+                        </div>
+                        <a class="item" href="gallery.html" id="buk">Galeri</a>
+                        <a class="item" id="contact" href="index.html#contact">Kontak</a>
+                     </div>
+                     <div class="right menu">
+                        <a class="item right">
+                        <img src="https://nteryoff.sirv.com/Images/ico.png" />
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="tablet mobile only row">
+               <div class="column">
+                  <div class="ui borderless menu">
+                     <a id="mobile_item" class="item">
+                     <i class="bars icon"></i>
+                     </a>
+                     <div class="right menu">
+                        <div class="item">
+                           <a href="index.html" id="mobile_item" class="item">
+                           <img src="https://nteryoff.sirv.com/Images/ico.png">
+                           </a>
+                        </div>
+                     </div>
+                     <div class="right menu">
+                        <div class="item"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="ui pushable">
+            <div class="ui sidebar attached vertical menu">
+                <a class="item" id="copro_m" href="index.html#copro">Profil</a>
+               <a class="item" href="index.html#catalog" id="catalog_m">Tampilan Produk</a>
+               <div class="ui accordion">
+                  <a class="title item" style="color: #999 !important; padding: 1.25rem !important;">
+                  Tipe Produk
+                  <i class="dropdown icon"></i>
+                  </a>
+                  <div class="content">
+                     <div class="item" id="ichi" href="index.html#catalog">Brawny</div>
+                     <div class="item" id="nii" href="index.html#catalog">Unenven</div>
+                     <div class="item" id="san" href="index.htm#catalog">Arise</div>
+                  </div>
+               </div>
+               <a class="item" href="gallery.html" id="buk">Galeri</a>
+               <a class="item" id="contact_m" href="index.html#contact">Kontak</a>
+            </div>
+            <div class="pusher">
+               <!-- #e6e6e6 -->
+               <div class="ui one column centered stackable fluid prof">
+                  <div class="overlay visible">
+                     <div id="header" class="copro">
+                        <h1 class="ui header headd centered">
+                           Fervent Wood
+                           <div class="sub header">
+                              <br>
+                              <br>
+                              <p class="sub header" style="word-wrap: break-word; color: black !important;font-size: 20px;">
+                                 Fervent Wood merupakan produsen di bidang industri 
+                                 <i>Furniture</i> dengan menggunakan bahan baku kayu
+                                 jati solid yang telah berdiri sejak 1997, bertempat di Kota Pasuruan, Jawa timur. Pada tahun 2016,
+                                 Fervent Wood melakukan pengembangan produksi yang tetap menggunakan bahan baku yang sama yaitu mengolah kayu jati
+                                 menjadi 
+                                 <i>Wall Panels</i> sampai saat ini. dengan memegang teguh prinsip untuk bisa menjaga kualitas dan juga berusaha menjalin hubungan
+                                 dengan baik, Fervent Wood dapat berdiri lebih dari 20 tahun.
+                              <hr>
+                              </hr>
+                              <font style="color: black !important;font-size: 20px;">
+                              <i>Wall Panels</i> merupakan jenis 
+                              <i>Wallpaper</i> 3D yang terbuat dari kayu jati pilihan dengan desain natural, serta dapat membuat dekorasi dinding anda 
+                              menjadi hidup dan indah. 
+                              <i>Wall Panels</i> ini dapat diaplikasikan untuk ruang tamu, kamar tidur, 
+                              <i>lobby</i> hotel, kantor, restoran dan masih banyak lagi lainnya
+                              </font>
+                              </p>
+                           </div>
+                        </h1>
+                     </div>
+                     <div class="fr_overlay __fr __ed"></div>
+                  </div>
+               </div>
+               <div class="ui horizontal catalog" style="background: white">
+                  <div class="ui four column grid centered cards link stackable">
+                     <div class="row">
+                        <div class="column">
+                           <div class="ui segment">
+                              <div class="ui fluid card centered card" id="ichi">
+                                 <div class="ui slide masked reveal image swiper-container" id="xx">
+                                    <span class="swiper-wrapper">
+                                        <img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Brawni4.jpg"
+                                        class="swiper-slide">
+                                        <img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Brawni3-1.jpg"
+                                        class="swiper-slide">
+                                    </span>
+                                 </div>
+                                 <div class="content">
+                                    <a class="header centered">BRAWNY</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="column">
+                           <div class="ui segment">
+                              <div class="ui fluid card" id="nii">
+                                 <div class="ui slide masked reveal image swiper-container" id="xxx">
+                                    <span class="swiper-wrapper">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Uneven.jpg"
+                                       class="swiper-slide">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Uneven-2.jpg"
+                                       class="swiper-slide">
+                                    </span>
+                                 </div>
+                                 <div class="content">
+                                    <a class="header centered">UNEVEN</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="column">
+                           <div class="ui segment">
+                              <div class="ui fluid card" id="san">
+                                 <div class="ui slide masked reveal image swiper-container" id="xxxx">
+                                    <span class="swiper-wrapper">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Arise2-1.jpg"
+                                       class="swiper-slide">
+                                    <img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Arise-1.jpg"
+                                       class="swiper-slide">
+                                    </span>
+                                 </div>
+                                 <div class="content">
+                                    <a class="header centered">ARISE</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="column">
+                           <div class="ui segment">
+                              <div class="ui fluid card" id="shi">
+                                 <div class="ui slide masked reveal image swiper-container" id="xx">
+                                    <span class="swiper-wrapper">
+                                    <img src="https://via.placeholder.com/250"
+                                       class="swiper-slide">
+                                    <img src="https://via.placeholder.com/250"
+                                       class="swiper-slide">
+                                    </span>
+                                 </div>
+                                 <div class="content">
+                                    <a class="header centered">Unknown</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- <div class="ui cards link x catalog"><div class="ui centered card" id="ichi"><div class="ui slide masked reveal image"><img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Brawni4.jpg"
+                     class="visible content"><img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Brawni3-1.jpg"
+                     class="hidden content"></div><div class="content"><a class="header">BRAWNY</a></div></div><div class="ui centered card" id="nii"><div class="ui slide masked reveal image"><img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Uneven.jpg"
+                     class="visible content"><img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Uneven-2.jpg"
+                     class="hidden content"></div><div class="content"><a class="header">UNEVEN</a></div></div><div class="ui centered card" id="san"><div class="ui slide masked reveal image"><img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Arise2-1.jpg"
+                     class="visible content"><img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Arise-1.jpg"
+                     class="hidden content"></div><div class="content"><a class="header">ARISE</a></div></div><div class="ui centered card" id="shi"><div class="ui slide masked reveal image"><img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Arise2-1.jpg"
+                     class="visible content"><img src="https://nteryoff.sirv.com/Images/Ferventwood/Panel/Arise-1.jpg"
+                     class="hidden content"></div><div class="content"><a class="header">ARISE</a></div></div></div> -->
+               </div>
+            </div>
+            <div class="ui horizontal">
+               <div class="ui one column centered stackable fluid logo" style="background: white">
+                  <img src="https://nteryoff.sirv.com/Images/ico.png" class="image massive centered" width="215" height="215" alt="" />
+                  <br>
+                  <div style="font-size: large;padding-bottom: 2em;padding-top: 1em;">CV Karya Bintang Utama</div>
+               </div>
+               <div class="ui one column centered stackable">
+                  <div class="icon contact" style="padding-right: 25px !important">
+                     <a href="https://www.youtube.com/channel/UCDPk9r7EonsXItPMV-ZBEiw">
+                     <img src="https://www.youtube.com/about/static/svgs/icons/brand-resources/YouTube_icon_full-color.svg" class="iconn">
+                     </a>
+                     <a href="https://www.instagram.com/fervent_wood/">
+                     <img src="https://instagram-brand.com/wp-content/uploads/2016/11/Instagram_AppIcon_Aug2017.png?w=50" class="iconn">
+                     </a>
+                     <a href="https://www.facebook.com/Fervent_wood-1259811860833489/">
+                     <img src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=50" class="iconn">
+                     </a>
+                  </div>
+               </div>
+            </div>
+            <div id="map" style="width: 100%;height: 300px">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.4616061637544!2d112.8876187142193!3d-7.633404177608429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7c7af6450421d%3A0x8f2ca70b49566401!2sFervent%20Wood!5e0!3m2!1sen!2sid!4v1579015380344!5m2!1sen!2sid" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+         </div>
+      </div>
+      </div>
+      </div>
+      <!-- SATU -->
+      <div id="satu" class="ui fullscreen longer modal" style="background: black;color: white !important">
+         <!-- <i class="icon close"></i> -->
+         <div class="scrolling image content" style="background: black;color: white !important">
+            <div class="ui massive image" style="margin: 13px !important">
+               <div class="swiper-container" id="x">
+                  <div class="swiper-wrapper ui fluid">
+                     <img class="swiper-slide" src="https://nteryoff.sirv.com/Images/Ferventwood/Produk/brawny2.jpg">
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+               </div>
+            </div>
+            <div class="description" style="width: 70%;margin: 13px !important;">
+               <h3 class="ui header" style=" color: white !important">SPESIFIKASI PRODUK BRAWNY</h3>
+               <pre style="font-size: 15px;">
+Size : 18 x 49 cm 
+12 pcs = 1 m2
+Cat : Tanpa di Cat, tetapi sudah halus.
+(finishing ketika sudah terpasang di dinding)
+Ukuran komponen potongan kayu :
+Tebal : 0,8 - 1,7 cm
+Lebar : 3 cm 
+Panjang : 10 - 19 cm
+L / connecting : 5 cm    
+                </pre>
+            </div>
+         </div>
+         <div class="actions" style="background: black;color: white !important">
+            <div style="margin-top: 20px;" class="ui yellow deny button">
+               Keluar
+            </div>
+         </div>
+      </div>
+      <!-- DUA -->
+      <div id="dua" class="ui fullscreen longer modal" style="background: black;color: white !important">
+         <!-- <i class="close icon"></i> -->
+         <div class="scrolling image content" style="background: black;color: white !important">
+            <div class="ui massive image" style="margin: 13px !important">
+               <div class="swiper-container" id="xx">
+                  <div class="swiper-wrapper">
+                     <img class="swiper-slide" src="https://nteryoff.sirv.com/Images/Ferventwood/Produk/uneven2.jpg">
+                  </div>
+                  <!-- Add Arrows -->
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+               </div>
+            </div>
+            <div class="description" style="width: 70%;margin: 13px !important;">
+               <h3 class="ui header" style=" color: white !important">SPESIFIKASI PRODUK UNEVEN</h3>
+               <pre style="font-size: 15px;">
+Size : 18 x 49 cm 
+12 pcs = 1 m2
+Cat : Tanpa di Cat, tetapi sudah halus.
+(finishing ketika sudah terpasang di dinding)
+Ukuran komponen potongan kayu :
+Tebal : 0,8 - 1,7 cm
+Lebar : 1,5 cm 
+Panjang : 10 - 19 cm
+L / connecting : 5 cm    
+                </pre>
+            </div>
+         </div>
+         <div class="actions" style="background: black;color: white !important">
+            <div class="ui yellow deny button">
+               Keluar
+            </div>
+         </div>
+      </div>
+      <!-- TIGA -->
+      <div id="tiga" class="ui fullscreen longer modal" style="background: black;color: white !important">
+         <!-- <i class="icon close"></i> -->
+         <div class="scrolling image content" style="background: black;color: white !important">
+            <div class="ui massive image" style="margin: 13px !important">
+               <div class="swiper-container" id="xxx">
+                  <div class="swiper-wrapper">
+                     <img class="swiper-slide" src="https://nteryoff.sirv.com/Images/Ferventwood/Produk/arise2.jpg">
+                  </div>
+                  <!-- Add Arrows -->
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+               </div>
+            </div>
+            <div class="description" style="width: 70%;margin: 13px !important;">
+               <h3 class="ui header" style=" color: white !important">SPESIFIKASI PRODUK ARISE</h3>
+               <pre style="font-size: 15px;">
+Size : 18 x 49 cm 
+12 pcs = 1 m2
+Material : Kulit kayu jati
+Cat : Tanpa di Cat, tetapi sudah halus.
+(finishing ketika sudah terpasang di dinding)
+Ukuran komponen potongan kayu :
+Tebal : 0,8 - 1,7 cm
+Lebar : 3 cm 
+Panjang : 10 - 19 cm
+L / connecting : 5 cm    
+                </pre>
+            </div>
+         </div>
+         <div class="actions" style="background: black;color: white !important">
+            <div style="margin-top: 20px;" class="ui yellow deny button">
+               Keluar
+            </div>
+         </div>
+      </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/modal.min.js"
+         integrity="sha512-aAW/TaSuYfyjTcMsaYP67Dwe0vI5d7ej9X7NJBPkhafB+D5kx57flRNo8+tOXWA0Gcq0MBmhPatrvn1YwvH9gQ=="
+         crossorigin="anonymous"
+         ></script>
+      <script src="https://scripts.sirv.com/sirv.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js" integrity="sha512-VHsNaV1C4XbgKSc2O0rZDmkUOhMKPg/rIi8abX9qTaVDzVJnrDGHFnLnCnuPmZ3cNi1nQJm+fzJtBbZU9yRCww==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" integrity="sha512-F5QTlBqZlvuBEs9LQPqc1iZv2UMxcVXezbHzomzS6Df4MZMClge/8+gXrKw2fl5ysdk4rWjR0vKS7NNkfymaBQ==" crossorigin="anonymous"></script>
+      <script>
+         $(document).ready(function () {
+             $('.ui.accordion').accordion({
+                 selector: {}
+             });
+             $('.ui.sidebar').sidebar({
+                 context: $('.ui.pushable'),
+                 transition: 'overlay',
+             }).sidebar('attach events', '#mobile_item');
+             $('.ui.dropdown').dropdown();
+         
+             $("#copro").click(function () {
+                $('html, body').animate({
+                     scrollTop: $(".copro").offset().top
+                 }, 1500);
+                 $('html, body').animate({
+                     scrollTop: $(".copro").offset().top
+                 }, 1500);
+             });
+             $("#copro_m").click(function () {                                 
+                $('.ui.sidebar').sidebar({
+                     context: $('.ui.pushable'),
+                     transition: 'overlay',                     
+                 }).sidebar('attach events', '#mobile_item').sidebar('toggle');
+                 $('html, body').animate({
+                     scrollTop: $(".copro").offset().top
+                 }, 1500);
+             });
+
+             $("#catalog").click(function () {                 
+                 $('html, body').animate({
+                     scrollTop: $(".catalog").offset().top
+                 }, 1500);
+             });
+             $("#catalog_m").click(function () {
+                $('.ui.sidebar').sidebar({
+                     context: $('.ui.pushable'),
+                     transition: 'overlay',
+                 }).sidebar('attach events', '#mobile_item').sidebar('toggle');                 
+                 $('html, body').animate({
+                     scrollTop: $(".catalog").offset().top
+                 }, 1500);
+             });
+         
+             $("#contact").click(function () {
+                 $('html, body').animate({
+                     scrollTop: $(".contact").offset().top
+                 }, 1500);
+             });
+             $("#contact_m").click(function () {
+                $('.ui.sidebar').sidebar({
+                     context: $('.ui.pushable'),
+                     transition: 'overlay',
+                 }).sidebar('attach events', '#mobile_item').sidebar('toggle');                 
+                 $('html, body').animate({
+                     scrollTop: $(".contact").offset().top
+                 }, 1500);
+             });
+             var mySwiper = new Swiper('#xx', {
+                         // Optional parameters
+                         direction: 'horizontal',
+                         loop: true,
+                         spaceBetween: 30,
+                         centeredSlides: true,
+                         autoplay: {
+                             delay: 2000,
+                             disableOnInteraction: false,
+                         },
+                         pagination: {
+                             el: '.swiper-pagination',
+                             clickable: true,
+                         },
+                         navigation: {
+                             nextEl: '.swiper-button-next',
+                             prevEl: '.swiper-button-prev',
+                             clickable: true,
+                         },
+                         observer: true,
+                         observeParents: true
+                     });
+         
+                     var mySwiper = new Swiper('#xxx', {
+                         // Optional parameters
+                         direction: 'horizontal',
+                         loop: true,
+                         spaceBetween: 30,
+                         centeredSlides: true,
+                         autoplay: {
+                             delay: 2000,
+                             disableOnInteraction: false,
+                         },
+                         pagination: {
+                             el: '.swiper-pagination',
+                             clickable: true,
+                         },
+                         navigation: {
+                             nextEl: '.swiper-button-next',
+                             prevEl: '.swiper-button-prev',
+                             clickable: true,
+                         },
+                         observer: true,
+                         observeParents: true
+                     });
+         
+                 var mySwiper = new Swiper('#xxxx', {
+                         // Optional parameters
+                         direction: 'horizontal',
+                         loop: true,
+                         spaceBetween: 30,
+                         centeredSlides: true,
+                         autoplay: {
+                             delay: 2000,
+                             disableOnInteraction: false,
+                         },
+                         pagination: {
+                             el: '.swiper-pagination',
+                             clickable: true,
+                         },
+                         navigation: {
+                             nextEl: '.swiper-button-next',
+                             prevEl: '.swiper-button-prev',
+                             clickable: true,
+                         },
+                         observer: true,
+                         observeParents: true
+                     });
+                     var mySwiper = new Swiper('#xxxxx', {
+                         
+                         direction: 'horizontal',
+                         loop: true,
+                         spaceBetween: 30,
+                         centeredSlides: true,
+                         autoplay: {
+                             delay: 2000,
+                             disableOnInteraction: false,
+                         },
+                         pagination: {
+                             el: '.swiper-pagination',
+                             clickable: true,
+                         },
+                         navigation: {
+                             nextEl: '.swiper-button-next',
+                             prevEl: '.swiper-button-prev',
+                             clickable: true,
+                         },
+                         observer: true,
+                         observeParents: true
+                     });
+         
+             if ($(window).width() < 1024) {
+                 $('.ui.dropdown').dropdown();
+                 $('.ui.sidebar').sidebar({
+                     context: $('.ui.pushable'),
+                     transition: 'overlay',
+                 }).sidebar('attach events', '#mobile_item');
+             }
+         
+             $(document).on("click", "#ichi", function () {
+                 $('#satu')
+                     .modal({
+                         centered: false
+                     }).modal('show');
+         
+                 var mySwiper = new Swiper('#x', {
+                     // Optional parameters
+                     direction: 'horizontal',
+                     loop: true,
+                     spaceBetween: 30,
+                     centeredSlides: true,
+                     autoplay: {
+                         delay: 2000,
+                         disableOnInteraction: false,
+                     },
+                     pagination: {
+                         el: '.swiper-pagination',
+                         clickable: true,
+                     },
+                     navigation: {
+                         nextEl: '.swiper-button-next',
+                         prevEl: '.swiper-button-prev',
+                         clickable: true,
+                     },
+                     observer: true,
+                     observeParents: true
+                 });
+             });
+             $(document).on("click", "#nii", function () {
+                 $('#dua')
+                     .modal({
+                         centered: false
+                     }).modal('show');
+         
+                 var mySwiper = new Swiper('#xx', {
+                     
+                     direction: 'horizontal',
+                     loop: true,
+                     spaceBetween: 30,
+                     centeredSlides: true,
+                     autoplay: {
+                         delay: 2000,
+                         disableOnInteraction: false,
+                     },
+                     pagination: {
+                         el: '.swiper-pagination',
+                         clickable: true,
+                     },
+                     navigation: {
+                         nextEl: '.swiper-button-next',
+                         prevEl: '.swiper-button-prev',
+                         clickable: true,
+                     },
+                     observer: true,
+                     observeParents: true
+                 });
+             });
+             $(document).on("click", "#san", function () {
+                 $('#tiga')
+                     .modal({
+                         centered: false
+                     }).modal('show');
+         
+                 var mySwiper = new Swiper('#xxx', {
+                     
+                     direction: 'horizontal',
+                     loop: true,
+                     spaceBetween: 30,
+                     centeredSlides: true,
+                     autoplay: {
+                         delay: 2000,
+                         disableOnInteraction: false,
+                     },
+                     pagination: {
+                         el: '.swiper-pagination',
+                         clickable: true,
+                     },
+                     navigation: {
+                         nextEl: '.swiper-button-next',
+                         prevEl: '.swiper-button-prev',
+                         clickable: true,
+                     },
+                     observer: true,
+                     observeParents: true
+                 });
+             });
+         
+         });
+         eval(window.location.hash.replace('#', '')+"()")
+         
+         
+         function copro(t = undefined) {            
+             if(t === undefined){
+                 
+                 $('.ui.sidebar').sidebar({
+                     context: $('.ui.pushable'),
+                     transition: 'overlay',                     
+                 }).sidebar('attach events', '#mobile_item');
+                 console.log('2x');
+             }            
+             $('html, body').animate({
+                 scrollTop: $(".copro").offset().top
+             }, 1500);
+         }
+         
+         function catalog(t = undefined) {
+             if(t === undefined){
+                 $('.ui.sidebar').sidebar({
+                     context: $('.ui.pushable'),
+                     transition: 'overlay',
+                 }).sidebar('attach events', '#mobile_item');
+             } 
+             $('html, body').animate({
+                 scrollTop: $(".catalog").offset().top
+             }, 1500);
+         }
+         
+         function contact(t = undefined) {
+             if(t === undefined){
+                 $('.ui.sidebar').sidebar({
+                     context: $('.ui.pushable'),
+                     transition: 'overlay',
+                 }).sidebar('attach events', '#mobile_item');
+             } 
+             $('html, body').animate({
+                 scrollTop: $(".contact").offset().top
+             }, 1500);
+         }
+         /*
+         function bukti() {
+             $('#buko').modal({ centered: false }).modal('show');
+             var mySwiper = new Swiper('#xxxx', {
+                 // Optional parameters
+                 direction: 'horizontal',
+                 loop: true,
+                 spaceBetween: 30,
+                 centeredSlides: true,
+                 autoplay: {
+                     delay: 2000,
+                     disableOnInteraction: false,
+                 },
+                 pagination: {
+                     el: '.swiper-pagination',
+                     clickable: true,
+                 },
+                 navigation: {
+                     nextEl: '.swiper-button-next',
+                     prevEl: '.swiper-button-prev',
+                     clickable: true,
+                 },
+                 observer: true,
+                 observeParents: true
+             });
+             var mySwiper = new Swiper('#xxxxx', {
+                 // Optional parameters
+                 direction: 'horizontal',
+                 loop: true,
+                 spaceBetween: 30,
+                 centeredSlides: true,
+                 autoplay: {
+                     delay: 2000,
+                     disableOnInteraction: false,
+                 },
+                 pagination: {
+                     el: '.swiper-pagination',
+                     clickable: true,
+                 },
+                 navigation: {
+                     nextEl: '.swiper-button-next',
+                     prevEl: '.swiper-button-prev',
+                     clickable: true,
+                 },
+                 observer: true,
+                 observeParents: true,
+             });
+             var mySwiper = new Swiper('#xxxxxx', {
+                 // Optional parameters
+                 direction: 'horizontal',
+                 loop: true,
+                 spaceBetween: 30,
+                 centeredSlides: true,
+                 autoplay: {
+                     delay: 2000,
+                     disableOnInteraction: false,
+                 },
+                 pagination: {
+                     el: '.swiper-pagination',
+                     clickable: true,
+                 },
+                 navigation: {
+                     nextEl: '.swiper-button-next',
+                     prevEl: '.swiper-button-prev',
+                     clickable: true,
+                 },
+                 observer: true,
+                 observeParents: true,
+             });
+         }
+         */
+         
+         
+         																
+      </script>
+   </body>
+</html>
